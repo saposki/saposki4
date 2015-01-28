@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    
+    <html lang="en">
+        
+        <head>
+            <meta charset="utf-8" />
+            <link rel="stylesheet" href="/static/css/style.css">
+            <link href="images/favicon.ico" rel="shortcut icon">
+            <title>SAPOSKI|blog</title>
+        </head>
+        
+        <body>
+            
+            <div class="container">
+                <header>
+                        <div class="logo_container">
+                        <a href="#"><img id="logo"
+                                src="/static/images/saposki.png" alt="saposki peer"
+                                width="119" height="45"></a>
+                        </div> <!-- end logo_container -->
+                        <div class="read_container">
+                            <li class="list">Read</li>
+                        </div>
+                </header>
+                
+            
+                {% for post in posts %}
+                    <div class="post">
+                    <h2>{{ post.title}}</h2>
+                    <h3>Posted on {{ post.timestamp }} by {{ post.author }}</h3>
+                    <p>{{ post.bodytext }}</p>
+                    <!--<p>{{ post.image }}</p>-->
+                    </div>
+                
+                {% endfor %}
+            </div>
+            
+        </body>
+        
+    </html>
